@@ -1,0 +1,75 @@
+.sources-section {
+  padding: 80px 20px;
+  background-color: #151515;
+  border-top: 1px solid #333;
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: block;
+    color: #e2b714;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 50px;
+  }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .book-card {
+    background: #222;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+
+    .book-icon {
+      font-size: 2.5rem;
+    }
+
+    .book-details {
+      h3 {
+        margin: 0 0 5px;
+        color: #fff;
+        font-size: 1.2rem;
+      }
+      .author {
+        color: #e2b714;
+        font-style: italic;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+      .desc {
+        color: #bbb;
+        line-height: 1.5;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

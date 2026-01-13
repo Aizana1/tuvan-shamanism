@@ -1,0 +1,230 @@
+.mystery-container {
+  min-height: 100vh;
+  background-color: #0e0e0e;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 60px 40px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding: 0;
+    gap: 40px;
+  }
+}
+
+.top-nav {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.image-col {
+  flex: 0 0 400px;
+  position: sticky;
+  top: 50px;
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    filter: brightness(0.9) sepia(0.1);
+  }
+
+  .caption {
+    margin-top: 15px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  @media (max-width: 900px) {
+    flex: auto;
+    width: 100%;
+    position: static;
+  }
+}
+
+.text-col {
+  flex: 1;
+
+  h1 {
+    font-size: 3.5rem;
+    color: #e2b714;
+    margin-top: 0;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    color: #666;
+    margin-bottom: 60px;
+    font-family: 'Courier New', monospace;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+  }
+
+  .chapter-section {
+    margin-bottom: 80px;
+
+    h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 30px;
+      border-left: 4px solid #e2b714;
+      padding-left: 20px;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+  }
+
+  .ritual-type {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: #151515;
+    border-radius: 8px;
+    border: 1px solid #222;
+
+    .type-text {
+      flex: 1;
+      h3 {
+        color: #e2b714;
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      .sub-h {
+        display: block;
+        color: #666;
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+      p {
+        margin: 0;
+        line-height: 1.6;
+        color: #bbb;
+      }
+    }
+  }
+
+  .process-step {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 1px solid #333;
+
+    .step-text {
+      flex: 1;
+
+      h3 {
+        color: #e2b714;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+
+        .tuvan {
+          color: #888;
+          font-weight: normal;
+          font-size: 1rem;
+          margin-left: 10px;
+          font-style: italic;
+        }
+      }
+
+      p,
+      li {
+        line-height: 1.7;
+        color: #ccc;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .img-wrapper {
+    flex: 0 0 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .type-img-placeholder,
+  .step-img-placeholder {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed #444;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    span {
+      font-size: 0.7rem;
+      color: #555;
+      text-align: center;
+      padding: 5px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .img-source {
+    font-size: 0.65rem;
+    color: #555;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .next-btn {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 20px 40px;
+    border: 2px solid #e2b714;
+    color: #e2b714;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #e2b714;
+      color: #000;
+    }
+  }
+}

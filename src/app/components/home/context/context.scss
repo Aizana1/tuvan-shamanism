@@ -1,0 +1,46 @@
+.context {
+  padding: 80px 20px;
+  background-color: #0b0c10;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .context-col {
+    padding: 20px;
+    border-left: 1px solid #333;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    p {
+      color: #aaa;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    &.highlight {
+      background: rgba(226, 183, 20, 0.05);
+      border-left: 4px solid #e2b714;
+
+      h3 {
+        color: #e2b714;
+      }
+      p {
+        color: #ddd;
+      }
+    }
+  }
+}
