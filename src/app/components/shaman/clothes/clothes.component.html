@@ -1,0 +1,125 @@
+<div class="clothes-container">
+  <div class="top-nav">
+    <a routerLink="/shaman" class="back-btn"><span class="arrow">←</span> Return to Rituals</a>
+  </div>
+
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1>Attributes of Tuvan Shamans</h1>
+      <p class="subtitle">Based on Chapter IV of "Tuvan Shamans" by M.B. Kenin-Lopsan</p>
+      <p class="hero-desc">
+        The shaman's costume is not merely clothing; it is armor, a map of the cosmos, and a bird's
+        body capable of flight. Without attributes, even a strong shaman is <span class="emphasize-yellow">vulnerable</span>.
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="/img/shaman-clothes-main.jpg" alt="Tuvan Shamaness" />
+      <div class="hero-caption">Source: Управление Верховного Шамана VK</div>
+    </div>
+  </header>
+
+  <div class="content-wrapper">
+    <section class="cloak-anatomy">
+      <div class="section-header">
+        <h2>1. Khamnaar Ton <span class="tuvan">(Ritual Cloak)</span></h2>
+        <p>The cloak is a universe in itself. Explore its sacred elements.</p>
+      </div>
+
+      <div class="anatomy-grid">
+        <div class="points-col left">
+          <div class="point-card" *ngFor="let item of cloakAttributesLeft">
+            <h3>{{ item.title }}</h3>
+            <span class="sub-h">{{ item.subtitle }}</span>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+
+        <div class="center-image">
+          <img src="/img/shaman-cloak.png" alt="Ritual Cloak" />
+          <span class="source">Source: National Museum of the Republic of Tuva</span>
+        </div>
+
+        <div class="points-col right">
+          <div class="point-card" *ngFor="let item of cloakAttributesRight">
+            <h3>{{ item.title }}</h3>
+            <span class="sub-h">{{ item.subtitle }}</span>
+            <p [innerHTML]="item.description"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="headdress-section">
+      <div class="section-header">
+        <h2>2. Khamnaar Bort <span class="tuvan">(Shamanic Headdress)</span></h2>
+        <p>
+          "The headdress serves as protection from evil spirits and grants the shaman double
+          vision."
+        </p>
+      </div>
+
+      <div class="headdress-content">
+        <div class="headdress-image">
+          <img src="/img/costume.jpg" alt="Shaman Headdress" />
+          <div class="img-source">Source: Управление Верховного Шамана VK</div>
+        </div>
+
+        <div class="headdress-details">
+          <div class="detail-item" *ngFor="let detail of headdressDetails">
+            <h3>
+              {{ detail.title }} <span class="tuvan">{{ detail.tuvan }}</span>
+            </h3>
+            <p>{{ detail.description }}</p>
+          </div>
+
+          <div class="living-tradition-img">
+            <img src="/img/bort.jpg" alt="Shaman with Eagle Headdress" />
+            <span class="caption">Source: Управление Верховного Шамана VK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="drum-section">
+      <div class="section-header">
+        <h2>3. Dungur & Orba <span class="tuvan">(Drum & Beater)</span></h2>
+        <p>
+          "The Drum is the shaman's steed. The Beater is his whip. Together they transport him
+          through the worlds."
+        </p>
+      </div>
+
+      <div class="drum-content">
+        <div class="drum-details left">
+          <h3>The Drum (Dungur)</h3>
+          <div class="detail-item" *ngFor="let item of drumDetailsLeft">
+            <h4>
+              {{ item.title }} <span class="tuvan" *ngIf="item.tuvan">{{ item.tuvan }}</span>
+            </h4>
+            <p [innerHTML]="item.description"></p>
+          </div>
+        </div>
+
+        <div class="drum-center-img">
+          <img src="/img/shaman-drum1.jpg" alt="Shaman Drum & Beater" />
+            <span class="img-source">Source: Ritual Practice</span>
+        </div>
+
+        <div class="drum-details right">
+          <h3>The Beater (Orba)</h3>
+          <div class="detail-item" *ngFor="let item of drumDetailsRight">
+            <h4>
+              {{ item.title }} <span class="tuvan" *ngIf="item.tuvan">{{ item.tuvan }}</span>
+            </h4>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="next-action">
+      <p>You have studied the armor. Now touch the instruments.</p>
+      <a routerLink="/items" class="cta-btn">Open the Altar →</a>
+    </div>
+  </div>
+</div>

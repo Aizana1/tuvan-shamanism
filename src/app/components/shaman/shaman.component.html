@@ -1,0 +1,74 @@
+<div class="mystery-container">
+  <div class="top-nav">
+    <a routerLink="/" class="back-btn"><span class="arrow">←</span> Return to Main Page</a>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="image-col">
+      <img src="/img/shaman-mystery.jpg" alt="Tuvan Shaman" />
+      <div class="caption">Source: Управление Верховного Шамана VK</div>
+    </div>
+
+    <div class="text-col">
+      <h1>The Mystery of Tuvan Shamans</h1>
+      <p class="subtitle">Based on Chapter III of "Tuvan Shamans" by M.B. Kenin-Lopsan</p>
+
+      <div class="chapter-section">
+        <h2>1. Forms of Kamlanie</h2>
+        <p class="intro">
+          Field materials collected in all districts of Tuva reveal several main types of
+          <em>Kamlanie</em> (rituals). These vary depending on local conditions, the shaman's power,
+          and their artistic skill.
+        </p>
+
+        <div class="ritual-type" *ngFor="let type of ritualTypes">
+          <div class="type-text">
+            <h3>{{ type.title }}</h3>
+            <span class="sub-h">{{ type.subtitle }}</span>
+            <p [innerHTML]="type.description"></p>
+          </div>
+          <div class="img-wrapper">
+            <div class="type-img-placeholder">
+              
+              <span><img [src]="type.img" [alt]="type.title"/></span>
+            </div>
+            <div class="img-source">{{ type.source }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chapter-section">
+        <h2>2. The Procedure of Kamlanie</h2>
+        <p class="intro">
+          A Tuvan shaman can perform rituals at any time, but late evening and night are considered
+          most suitable.
+          <em>"The shaman destined to shamanize, leads the ritual in the black night."</em>
+        </p>
+
+        <div class="process-step" *ngFor="let step of procedureSteps">
+          <div class="step-text">
+            <h3>
+              {{ step.title }} <span class="tuvan">{{ step.tuvanTitle }}</span>
+            </h3>
+            <p [innerHTML]="step.description"></p>
+
+            <ul *ngIf="step.listItems">
+              <li *ngFor="let item of step.listItems">
+                <strong>{{ item.label }}:</strong> {{ item.text }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="img-wrapper" *ngIf="step.hasPhoto">
+            <div class="step-img-placeholder">
+              <span><img [src]="step.img" [alt]="step.title"/></span>
+            </div>
+            <div class="img-source">{{ step.source }}</div>
+          </div>
+        </div>
+      </div>
+
+      <a routerLink="/shaman/clothes" class="next-btn">Chapter IV: Shamanic Costume →</a>
+    </div>
+  </div>
+</div>

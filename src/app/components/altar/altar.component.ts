@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 interface AltarItem {
   id: string;
@@ -20,7 +21,9 @@ interface AltarItem {
   templateUrl: './altar.component.html',
   styleUrls: ['./altar.component.scss'],
 })
-export class AltarComponent {
+export class AltarComponent implements OnInit {
+  constructor(private meta: Meta, private title: Title) {}
+
   selectedItem: AltarItem | null = null;
 
   items: AltarItem[] = [
@@ -40,7 +43,7 @@ export class AltarComponent {
       name: 'Kuzungu (Bronze Mirror)',
       description:
         'The Kuzungu is the "eye" of the shaman. Worn on the chest, this bronze mirror repels attacks from evil spirits and reflects the invisible world. A shaman can shamanize without a drum, but never without a mirror. It is the ultimate shield.',
-      img: '/img/mirror.jpg',
+      img: '/img/mirror1.png',
       x: 70,
       y: 55,
       width: 180,
@@ -51,7 +54,7 @@ export class AltarComponent {
       name: 'Adyg Eeren (Bear Spirit)',
       description:
         'An amulet made of bear claws. The bear (Adyg) is the most powerful ancestor spirit. This Eeren gives the shaman immense physical and spiritual strength to fight dark forces of the Lower World.',
-      img: '/img/bear-claw.png',
+      img: '/img/bear-claws.png',
       x: 15,
       y: 60,
       width: 180,
@@ -80,6 +83,25 @@ export class AltarComponent {
       rotate: 10,
     },
   ];
+
+  ngOnInit() {
+    this.title.setTitle('The Semantic Shaman | Explore Tuvan Shamanism');
+
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Interactive exploration of Tuvan Shamanism based on M.B. Kenin-Lopsan. Discover rituals, costumes, and sacred attributes.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Tuva, Shamanism, Shaman, Rituals, Kamlanie, Kenin-Lopsan, Shamanic Costume, Drum, Altar',
+      },
+      { name: 'author', content: 'Aizana' },
+      { name: 'robots', content: 'index, follow' },
+    ]);
+  }
 
   selectItem(item: AltarItem) {
     this.selectedItem = item;
