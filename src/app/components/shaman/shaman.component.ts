@@ -39,7 +39,7 @@ export class ShamanComponent implements OnInit {
       subtitle: '(Kamlanie with a Mirror)',
       description:
         'Every crowned shaman must have a <em>Kuzungu</em> (bronze mirror). With it, one can perform healing rituals. Historically, ancient found bronze mirrors were highly valued for divination and rituals even without full attire.',
-      img: '/img/kuzungu.jpeg',
+      img: 'img/kuzungu.jpeg',
       source: 'Source: Inst: bubenshamana',
     },
     {
@@ -47,7 +47,7 @@ export class ShamanComponent implements OnInit {
       subtitle: '(Kamlanie with a Khomus)',
       description:
         'Common in Erzin and Tes-Khem. Shamans performed rituals artistically, accompanying themselves on a <em>Sheler-Khomus</em> (musical instrument). Typically characteristic of "weaker" shamans.',
-      img: '/img/khomus.jpg',
+      img: 'img/khomus.jpg',
       source: 'Source: https://kntuva.ru/post/1/1047/',
     },
     {
@@ -55,7 +55,7 @@ export class ShamanComponent implements OnInit {
       subtitle: '(Kamlanie with Drum & Cloak)',
       description:
         'High-class professional shamans were required to have a full set: a drum (*Dungur*) and ritual cloak (*Derig*). A "true strong shaman" never shamanized without these attributes.',
-      img: '/img/dungur.jpg',
+      img: 'img/dungur.jpg',
       source: 'Source: National Museum of the Republic of Tuva',
     },
     {
@@ -63,7 +63,7 @@ export class ShamanComponent implements OnInit {
       subtitle: '(Kamlanie with a Staff)',
       description:
         'According to S.I. Vainshtein, the use of a birch staff called <em>Dayak</em> was characteristic of shamans in the Todzha district.',
-      img: '/img/dayak.jpg',
+      img: 'img/dayak.jpg',
       source: 'Source: National Museum of the Republic of Tuva',
     },
   ];
@@ -81,7 +81,7 @@ export class ShamanComponent implements OnInit {
       description:
         'Before any ritual, the shaman must light the <em>San</em> (censer). Burning coals and juniper (*artysh*) are placed on a flat stone. The shaman purifies his drum and boots over the smoke, standing on one leg.',
       hasPhoto: true,
-      img: '/img/okurivanie.jpg',
+      img: 'img/okurivanie.jpg',
       source: 'Source: Управление Верховного Шамана VK',
     },
     {
