@@ -411,18 +411,21 @@
     margin-bottom: 20px;
     font-size: 1.2rem;
   }
-  .cta-btn {
+  .next-btn {
     display: inline-block;
-    padding: 15px 50px;
-    background: #e2b714;
-    color: #000;
+    margin-top: 40px;
+    padding: 20px 40px;
+    border: 2px solid #e2b714;
+    color: #e2b714;
     text-decoration: none;
+    text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    transition: transform 0.2s;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+
     &:hover {
-      transform: scale(1.05);
+      background: #e2b714;
+      color: #000;
     }
   }
 }
