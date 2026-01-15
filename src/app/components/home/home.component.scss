@@ -115,3 +115,25 @@ footer {
     padding-top: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-content {
+    .title {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      font-size: 0.8rem;
+      padding: 10px 15px;
+    }
+
+    .credits {
+      font-size: 0.5rem;
+      right: 28px;
+    }
+  }
+}

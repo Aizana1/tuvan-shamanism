@@ -29,10 +29,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
   }
 
   .book-card {
@@ -70,6 +66,15 @@
         line-height: 1.5;
         font-size: 0.95rem;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.6rem;
+    }
+    .books-grid {
+      grid-template-columns: 1fr;
     }
   }
 }
