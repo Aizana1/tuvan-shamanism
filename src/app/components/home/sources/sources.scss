@@ -1,16 +1,15 @@
 .sources-section {
   padding: 80px 20px;
-  background-color: #151515;
-  border-top: 1px solid #333;
+  background-color: var(--color-dark-bg-lighter);
+  border-top: 1px solid var(--color-border-dark);
 
   .container {
     max-width: 1000px;
-    margin: 0 auto;
   }
 
   .section-label {
     display: block;
-    color: #e2b714;
+    color: var(--color-gold);
     font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -21,7 +20,7 @@
   h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--color-white);
     margin-bottom: 50px;
   }
 
@@ -32,17 +31,15 @@
   }
 
   .book-card {
-    background: #222;
+    background: var(--color-border-darker);
     padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #333;
     display: flex;
     gap: 20px;
     transition: transform 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
-      border-color: #555;
+      border-color: var(--color-text-darkest);
     }
 
     .book-icon {
@@ -52,17 +49,17 @@
     .book-details {
       h3 {
         margin: 0 0 5px;
-        color: #fff;
+        color: var(--color-white);
         font-size: 1.2rem;
       }
       .author {
-        color: #e2b714;
+        color: var(--color-gold);
         font-style: italic;
         margin-bottom: 15px;
         font-size: 0.9rem;
       }
       .desc {
-        color: #bbb;
+        color: var(--color-text-muted);
         line-height: 1.5;
         font-size: 0.95rem;
       }

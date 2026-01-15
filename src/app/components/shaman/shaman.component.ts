@@ -116,19 +116,19 @@ export class ShamanComponent implements OnInit {
     },
     {
       title: 'Divination',
-      tuvanTitle: '(Teerek Kaary)',
+      tuvanTitle: '(Toorek Kaary)',
       description: 'The shaman throws his beater (*Orba*) to predict the future:',
       listItems: [
         {
-          label: 'Anaa Teerek (Good Omen)',
+          label: 'Anaa Toorek (Good Omen)',
           text: 'Fur side up. "My shaman, the divination is worth silver and gold!"',
         },
         {
-          label: 'Uygu Teerek (Sleep/Bad Omen)',
+          label: 'Uygu Toorek (Sleep/Bad Omen)',
           text: 'Wood side up. The shaman must drum again to avert danger.',
         },
         {
-          label: 'Kyrlan Teerek (Neutral)',
+          label: 'Kyrlan Toorek (Neutral)',
           text: 'Falls on the side. The shaman flips it and throws again.',
         },
       ],

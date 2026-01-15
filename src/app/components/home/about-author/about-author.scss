@@ -1,14 +1,6 @@
 .about {
   padding: 100px 20px;
-  background: #111;
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-  }
+  background: var(--color-dark-bg-light);
 
   .text-block {
     flex: 1;
@@ -16,24 +8,24 @@
     h2 {
       font-size: 3rem;
       margin-bottom: 10px;
-      color: #fff;
+      color: var(--color-white);
     }
     h3 {
       font-size: 1.5rem;
-      color: #666;
+      color: var(--color-text-darker);
       margin-bottom: 30px;
     }
     p {
       line-height: 1.8;
       font-size: 1.1rem;
-      color: #bbb;
+      color: var(--color-text-muted);
       margin-bottom: 20px;
     }
     .quote {
       font-style: italic;
-      border-left: 4px solid #e2b714;
+      border-left: 4px solid var(--color-gold);
       padding-left: 20px;
-      color: #fff;
+      color: var(--color-white);
       margin-top: 40px;
     }
   }
@@ -44,15 +36,8 @@
 
     img {
       max-width: 100%;
-      border-radius: 4px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
       filter: sepia(30%);
-    }
-    .caption {
-      display: block;
-      margin-top: 10px;
-      color: #555;
-      font-size: 0.9rem;
     }
   }
 
