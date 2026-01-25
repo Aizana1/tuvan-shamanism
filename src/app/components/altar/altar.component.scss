@@ -68,6 +68,7 @@
     display: block;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.7));
     transition: filter 0.3s ease;
+    max-width: 140px;
   }
 
   &:hover {
@@ -125,12 +126,6 @@
     }
     p {
       font-size: 0.9rem;
-    }
-  }
-
-  .item-wrapper {
-    img {
-      max-width: 140px;
     }
   }
 }
