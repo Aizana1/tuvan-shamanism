@@ -1,12 +1,10 @@
 <div class="altar-container">
-  <a routerLink="/shaman/clothes" class="back-btn"> ← Return to Clothes </a>
+  <a routerLink="/shaman/clothes" class="back-btn"> {{ translationService.getTranslations().altar.backButton }} </a>
 
   <div class="altar-description">
-    <h1>Sacred Attributes</h1>
+    <h1>{{ translationService.getTranslations().altar.title }}</h1>
     <p>
-      According to Tuvan tradition, a shaman's power resides in their attributes. These are not mere
-      objects, but living entities — "horses" for traveling across worlds and "armor" against evil
-      spirits. Explore the items below to learn their hidden meanings.
+      {{ translationService.getTranslations().altar.description }}
     </p>
   </div>
 
@@ -28,7 +26,7 @@
 
   <div class="modal-backdrop" *ngIf="selectedItem" (click)="closeModal()">
     <div class="modal-card" (click)="$event.stopPropagation()">
-      <button class="close-btn" (click)="closeModal()">×</button>
+      <button class="close-btn" (click)="closeModal()">{{ translationService.getTranslations().common.close }}</button>
 
       <div class="modal-content">
         <div class="img-col">

@@ -1,28 +1,26 @@
 <div class="clothes-container">
   <div class="top-nav">
-    <a routerLink="/shaman" class="back-btn"><span class="arrow">←</span> Return to Rituals</a>
+    <a routerLink="/shaman" class="back-btn"><span class="arrow">←</span> {{ translationService.getTranslations().clothes.backButton }}</a>
   </div>
 
   <header class="hero-section">
     <div class="hero-content">
-      <h1>Attributes of Tuvan Shamans</h1>
-      <p class="subtitle">Based on Chapter IV of "Tuvan Shamans" by M.B. Kenin-Lopsan</p>
-      <p class="hero-desc">
-        The shaman's costume is not merely clothing; it is armor, a map of the cosmos, and a bird's
-        body capable of flight. Without attributes, even a strong shaman is <span class="emphasize-yellow">vulnerable</span>.
+      <h1>{{ translationService.getTranslations().clothes.title }}</h1>
+      <p class="subtitle">{{ translationService.getTranslations().clothes.subtitle }}</p>
+      <p class="hero-desc" [innerHTML]="translationService.getTranslations().clothes.heroDescription">
       </p>
     </div>
     <div class="hero-image">
       <img src="img/shaman-clothes-main.jpg" alt="Tuvan Shamaness" />
-      <div class="hero-caption">Source: Управление Верховного Шамана VK</div>
+      <div class="hero-caption">{{ translationService.getTranslations().shaman.imageCaption }}</div>
     </div>
   </header>
 
   <div class="content-wrapper">
     <section class="cloak-anatomy">
       <div class="section-header">
-        <h2>1. Khamnaar Ton <span class="tuvan">(Ritual Cloak)</span></h2>
-        <p>The cloak is a universe in itself. Explore its sacred elements.</p>
+        <h2>{{ translationService.getTranslations().clothes.cloak.title }} <span class="tuvan">{{ translationService.getTranslations().clothes.cloak.tuvan }}</span></h2>
+        <p>{{ translationService.getTranslations().clothes.cloak.subtitle }}</p>
       </div>
 
       <div class="anatomy-grid">
@@ -51,10 +49,9 @@
 
     <section class="headdress-section">
       <div class="section-header">
-        <h2>2. Khamnaar Bort <span class="tuvan">(Shamanic Headdress)</span></h2>
+        <h2>{{ translationService.getTranslations().clothes.headdress.title }} <span class="tuvan">{{ translationService.getTranslations().clothes.headdress.tuvan }}</span></h2>
         <p>
-          "The headdress serves as protection from evil spirits and grants the shaman double
-          vision."
+          {{ translationService.getTranslations().clothes.headdress.subtitle }}
         </p>
       </div>
 
@@ -82,16 +79,15 @@
 
     <section class="drum-section">
       <div class="section-header">
-        <h2>3. Dungur & Orba <span class="tuvan">(Drum & Beater)</span></h2>
+        <h2>{{ translationService.getTranslations().clothes.drum.title }} <span class="tuvan">{{ translationService.getTranslations().clothes.drum.tuvan }}</span></h2>
         <p>
-          "The Drum is the shaman's steed. The Beater is his whip. Together they transport him
-          through the worlds."
+          {{ translationService.getTranslations().clothes.drum.subtitle }}
         </p>
       </div>
 
       <div class="drum-content">
         <div class="drum-details left">
-          <h3>The Drum (Dungur)</h3>
+          <h3>{{ translationService.getTranslations().clothes.drum.drumTitle }}</h3>
           <div class="detail-item" *ngFor="let item of drumDetailsLeft">
             <h4>
               {{ item.title }} <span class="tuvan" *ngIf="item.tuvan">{{ item.tuvan }}</span>
@@ -106,7 +102,7 @@
         </div>
 
         <div class="drum-details right">
-          <h3>The Beater (Orba)</h3>
+          <h3>{{ translationService.getTranslations().clothes.drum.beaterTitle }}</h3>
           <div class="detail-item" *ngFor="let item of drumDetailsRight">
             <h4>
               {{ item.title }} <span class="tuvan" *ngIf="item.tuvan">{{ item.tuvan }}</span>
@@ -118,8 +114,8 @@
     </section>
 
     <div class="next-action">
-      <p>You have studied the armor. Now touch the instruments.</p>
-      <a routerLink="/items" class="next-btn">Open the Altar →</a>
+      <p>{{ translationService.getTranslations().clothes.nextAction.text }}</p>
+      <a routerLink="/items" class="next-btn">{{ translationService.getTranslations().clothes.nextAction.button }}</a>
     </div>
   </div>
 </div>

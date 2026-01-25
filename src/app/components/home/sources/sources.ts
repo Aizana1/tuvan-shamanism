@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { TranslationService } from '../../../services/translation.service';
 
 @Component({
   selector: 'app-sources',
@@ -8,7 +9,11 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './sources.scss',
 })
 export class SourcesComponent implements OnInit {
-  constructor(private meta: Meta, private title: Title) {}
+  constructor(
+    private meta: Meta,
+    private title: Title,
+    public translationService: TranslationService
+  ) {}
 
   ngOnInit() {
     this.title.setTitle('The Semantic Shaman | Explore Tuvan Shamanism');

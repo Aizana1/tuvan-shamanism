@@ -1,26 +1,21 @@
 <section class="about">
   <div class="container">
     <div class="text-block">
-      <h2>Mongush Kenin-Lopsan</h2>
-      <h3>(1925 – 2022)</h3>
+      <h2>{{ translationService.getTranslations().aboutAuthor.title }}</h2>
+      <h3>{{ translationService.getTranslations().aboutAuthor.years }}</h3>
       <p>
-        Legendary Tuvan scholar, writer, Doctor of Historical Sciences, and shaman. He dedicated his life to preserving the ancient
-        traditions of his people. Kenin-Lopsan was declared a "Living Treasure of Shamanism" by the
-        Foundation for Shamanic Studies (USA).
+        {{ translationService.getTranslations().aboutAuthor.description1 }}
       </p>
       <p>
-        Tuvan shamanism is not a religion in the Western sense, but a way of living in harmony with
-        nature. According to Kenin-Lopsan, a shaman (*Kham*) is a mediator between the human world
-        and the spirits of mountains, rivers, and the sky.
+        {{ translationService.getTranslations().aboutAuthor.description2 }}
       </p>
       <p class="quote">
-        "The sound of the drum is a mystic mystery known perfectly by Tuvan shamans. For a ringing
-        drum, there are no boundaries between earth and cosmos."
+        {{ translationService.getTranslations().aboutAuthor.quote }}
       </p>
     </div>
     <div class="image-block">
       <img src="img/kenin-lopsan.jpg" alt="Mongush Kenin-Lopsan" />
-      <span class="caption">The Grand Shaman with his Drum</span>
+      <span class="caption">{{ translationService.getTranslations().aboutAuthor.imageCaption }}</span>
     </div>
   </div>
 </section>

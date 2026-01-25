@@ -1,24 +1,21 @@
 <div class="mystery-container">
   <div class="top-nav">
-    <a routerLink="/" class="back-btn"><span class="arrow">←</span> Return to Main Page</a>
+    <a routerLink="/" class="back-btn"><span class="arrow">←</span> {{ translationService.getTranslations().shaman.backButton }}</a>
   </div>
 
   <div class="content-wrapper">
     <div class="image-col">
       <img src="img/shaman-mystery.jpg" alt="Tuvan Shaman" />
-      <div class="caption">Source: Управление Верховного Шамана VK</div>
+      <div class="caption">{{ translationService.getTranslations().shaman.imageCaption }}</div>
     </div>
 
     <div class="text-col">
-      <h1>The Mystery of Tuvan Shamans</h1>
-      <p class="subtitle">Based on Chapter III of "Tuvan Shamans" by M.B. Kenin-Lopsan</p>
+      <h1>{{ translationService.getTranslations().shaman.title }}</h1>
+      <p class="subtitle">{{ translationService.getTranslations().shaman.subtitle }}</p>
 
       <div class="chapter-section">
-        <h2>1. Forms of Kamlanie</h2>
-        <p class="intro">
-          Field materials collected in all districts of Tuva reveal several main types of
-          <em>Kamlanie</em> (rituals). These vary depending on local conditions, the shaman's power,
-          and their artistic skill.
+        <h2>{{ translationService.getTranslations().shaman.formsOfKamlanie.title }}</h2>
+        <p class="intro" [innerHTML]="translationService.getTranslations().shaman.formsOfKamlanie.intro">
         </p>
 
         <div class="ritual-type" *ngFor="let type of ritualTypes">
@@ -38,11 +35,8 @@
       </div>
 
       <div class="chapter-section">
-        <h2>2. The Procedure of Kamlanie</h2>
-        <p class="intro">
-          A Tuvan shaman can perform rituals at any time, but late evening and night are considered
-          most suitable.
-          <em>"The shaman destined to shamanize, leads the ritual in the black night."</em>
+        <h2>{{ translationService.getTranslations().shaman.procedureOfKamlanie.title }}</h2>
+        <p class="intro" [innerHTML]="translationService.getTranslations().shaman.procedureOfKamlanie.intro">
         </p>
 
         <div class="process-step" *ngFor="let step of procedureSteps">
@@ -68,7 +62,7 @@
         </div>
       </div>
 
-      <a routerLink="/shaman/clothes" class="next-btn">Shamanic Costume →</a>
+      <a routerLink="/shaman/clothes" class="next-btn">{{ translationService.getTranslations().shaman.nextButton }}</a>
     </div>
   </div>
 </div>

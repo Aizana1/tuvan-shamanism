@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { TranslationService } from '../../../services/translation.service';
 
 @Component({
   selector: 'app-about-author',
@@ -7,8 +8,12 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './about-author.html',
   styleUrl: './about-author.scss',
 })
-export class AboutAuthorComponent implements OnInit{
-  constructor(private meta: Meta, private title: Title) {}
+export class AboutAuthorComponent implements OnInit {
+  constructor(
+    private meta: Meta,
+    private title: Title,
+    public translationService: TranslationService
+  ) {}
 
   ngOnInit() {
     this.title.setTitle('The Semantic Shaman | Explore Tuvan Shamanism');

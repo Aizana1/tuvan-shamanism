@@ -1,9 +1,10 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, LanguageSwitcherComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

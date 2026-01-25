@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { TranslationService } from '../../../services/translation.service';
 
 interface CloakAttribute {
   title: string;
@@ -29,7 +30,17 @@ interface DrumDetail {
   styleUrl: './clothes.component.scss'
 })
 export class ClothesComponent implements OnInit {
-  constructor(private meta: Meta, private title: Title) {}
+  cloakAttributesLeft: CloakAttribute[] = [];
+  cloakAttributesRight: CloakAttribute[] = [];
+  headdressDetails: HeaddressDetail[] = [];
+  drumDetailsLeft: DrumDetail[] = [];
+  drumDetailsRight: DrumDetail[] = [];
+
+  constructor(
+    private meta: Meta,
+    private title: Title,
+    public translationService: TranslationService
+  ) {}
 
   ngOnInit() {
     this.title.setTitle('The Semantic Shaman | Explore Tuvan Shamanism');
@@ -40,64 +51,127 @@ export class ClothesComponent implements OnInit {
       { name: 'author', content: 'Aizana' },
       { name: 'robots', content: 'index, follow' }
     ]);
+
+    this.loadTranslations();
+    
+    // Reload translations when language changes
+    this.translationService.currentLanguage$.subscribe(() => {
+      this.loadTranslations();
+    });
   }
-  
-  cloakAttributesLeft: CloakAttribute[] = [
-    {
-      title: 'Iyi Kara Kuskun',
-      subtitle: 'Two Black Ravens',
-      description: 'Wooden ravens on shoulders. They act as scouts, flying ahead to find lost souls.'
-    },
-    {
-      title: 'Aldy Chuuru',
-      subtitle: 'Lynx Fur',
-      description: 'A strip of lynx leg fur sewn along the sleeve seams. Can be replaced by wolf or fox.'
-    },
-    {
-      title: 'Manchak',
-      subtitle: 'Fringe Bundle',
-      description: '156 leather cords. Vainshtein wrote: "These are the wings allowing the shaman to fly."'
-    }
-  ];
 
-  cloakAttributesRight: CloakAttribute[] = [
-    {
-      title: 'Snakes (Chylan)',
-      subtitle: 'Cosmic Guides',
-      description: '<strong>Shoulder Snakes:</strong> 18 fabric snakes.<br><strong>Shooting Snakes:</strong> Metal chains with arrowheads.<br><strong>Striped Snakes:</strong> 9 snakes with pouches.'
-    },
-    {
-      title: 'Bells & Whistles',
-      subtitle: 'Konguraalar',
-      description: '15 metal tubes and bells on the back. Their sound creates a hypnotic rhythm during movement.'
-    },
-    {
-      title: 'Richness of Elbow',
-      subtitle: 'Shenek Bailaa',
-      description: 'Brocade pouch and 9 leather straps on the left sleeve with three white ribbons.'
-    }
-  ];
+  loadTranslations() {
+    const t = this.translationService.getTranslations().clothes;
+    const cloak = t.cloak.attributes;
+    const headdress = t.headdress.details;
+    const drum = t.drum;
 
-  headdressDetails: HeaddressDetail[] = [
-    { title: 'Copper Face', tuvan: '(Khola Khaay, Khola Karak)', description: 'A copper nose and copper eyes are sewn onto the front. Surrounded by red fabric circles, they give the headdress the appearance of a mythical creature.' },
-    { title: 'Copper Horns', tuvan: '(Ches Myiys)', description: 'Stylized copper horns (~15cm) forged by a blacksmith. They protect against evil spirits. Historically, horned headdresses have a deep tradition dating back to the Iron Age.' },
-    { title: 'Eagle Feathers', tuvan: '(Sannash)', description: 'The main decoration consists of 40 large and 20 small eagle feathers. They represent the birds—spirit helpers. "The eagle spirit helps the shaman to fly."' },
-    { title: 'Black Wings', tuvan: '(Suuk-Kara)', description: 'Two long black feathers at the very front. They act as "fins" or rudders, helping the shaman overcome air resistance during his cosmic flight.' },
-    { title: 'The Fringe', tuvan: '(Borttun Khanazy)', description: 'The "wall of the hat" covers the eyes. Traditionally decorated with maral (deer) teeth or beads and checkerboard embroidery. It hides the shaman\'s human gaze from the spirits.' }
-  ];
+    this.cloakAttributesLeft = [
+      {
+        title: cloak.iyiKaraKuskun.title,
+        subtitle: cloak.iyiKaraKuskun.subtitle,
+        description: cloak.iyiKaraKuskun.description
+      },
+      {
+        title: cloak.aldyChuuru.title,
+        subtitle: cloak.aldyChuuru.subtitle,
+        description: cloak.aldyChuuru.description
+      },
+      {
+        title: cloak.manchak.title,
+        subtitle: cloak.manchak.subtitle,
+        description: cloak.manchak.description
+      }
+    ];
 
-  drumDetailsLeft: DrumDetail[] = [
-    { title: 'The Frame', tuvan: '(Rim)', description: 'Made of larch wood. Before cutting the tree, a ritual is performed to feed the forest spirit.' },
-    { title: 'The Skin', tuvan: '(Dungurnun Algyzy)', description: 'Depending on the region, the skin of a mountain goat (*te*), maral deer, or roe deer is used.' },
-    { title: 'The Handle', tuvan: '(Tudazy)', description: 'The vertical bar inside. It often depicts the monstrous bird Khaan-Khereti or the shaman himself.' },
-    { title: 'The Crossbar', tuvan: '(Sheezhep)', description: 'A horizontal willow stick holding bronze bells and arrowheads.' }
-  ];
+    this.cloakAttributesRight = [
+      {
+        title: cloak.snakes.title,
+        subtitle: cloak.snakes.subtitle,
+        description: cloak.snakes.description
+      },
+      {
+        title: cloak.bells.title,
+        subtitle: cloak.bells.subtitle,
+        description: cloak.bells.description
+      },
+      {
+        title: cloak.richness.title,
+        subtitle: cloak.richness.subtitle,
+        description: cloak.richness.description
+      }
+    ];
 
-  drumDetailsRight: DrumDetail[] = [
-    { title: 'Material', description: 'Made from elk horn (Eastern Tuva) or pine/juniper root (Western Tuva). The beater is a sacred tool for divination.' },
-    { title: 'Front Side', tuvan: '(Orbanyn Arny)', description: 'The striking side is covered with the skin of a bear or mountain goat.' },
-    { title: 'Back Side', tuvan: '(Orbanyn Arty)', description: 'Decorated with carvings (often a pine tree with a bird) and metal rings. The rings jingle, adding another layer of sound.' },
-    { title: 'Divination Tool', description: 'The beater is used to predict the future. When thrown, if it lands fur-up, it is good luck. Wood-up means danger.' }
-  ];
+    this.headdressDetails = [
+      {
+        title: headdress.copperFace.title,
+        tuvan: headdress.copperFace.tuvan,
+        description: headdress.copperFace.description
+      },
+      {
+        title: headdress.copperHorns.title,
+        tuvan: headdress.copperHorns.tuvan,
+        description: headdress.copperHorns.description
+      },
+      {
+        title: headdress.eagleFeathers.title,
+        tuvan: headdress.eagleFeathers.tuvan,
+        description: headdress.eagleFeathers.description
+      },
+      {
+        title: headdress.blackWings.title,
+        tuvan: headdress.blackWings.tuvan,
+        description: headdress.blackWings.description
+      },
+      {
+        title: headdress.fringe.title,
+        tuvan: headdress.fringe.tuvan,
+        description: headdress.fringe.description
+      }
+    ];
 
+    this.drumDetailsLeft = [
+      {
+        title: drum.drumDetails.frame.title,
+        tuvan: drum.drumDetails.frame.tuvan,
+        description: drum.drumDetails.frame.description
+      },
+      {
+        title: drum.drumDetails.skin.title,
+        tuvan: drum.drumDetails.skin.tuvan,
+        description: drum.drumDetails.skin.description
+      },
+      {
+        title: drum.drumDetails.handle.title,
+        tuvan: drum.drumDetails.handle.tuvan,
+        description: drum.drumDetails.handle.description
+      },
+      {
+        title: drum.drumDetails.crossbar.title,
+        tuvan: drum.drumDetails.crossbar.tuvan,
+        description: drum.drumDetails.crossbar.description
+      }
+    ];
+
+    this.drumDetailsRight = [
+      {
+        title: drum.beaterDetails.material.title,
+        description: drum.beaterDetails.material.description
+      },
+      {
+        title: drum.beaterDetails.frontSide.title,
+        tuvan: drum.beaterDetails.frontSide.tuvan,
+        description: drum.beaterDetails.frontSide.description
+      },
+      {
+        title: drum.beaterDetails.backSide.title,
+        tuvan: drum.beaterDetails.backSide.tuvan,
+        description: drum.beaterDetails.backSide.description
+      },
+      {
+        title: drum.beaterDetails.divinationTool.title,
+        description: drum.beaterDetails.divinationTool.description
+      }
+    ];
+  }
 }
