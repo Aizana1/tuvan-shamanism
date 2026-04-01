@@ -8,7 +8,7 @@ import { LanguageSwitcherComponent } from './components/language-switcher/langua
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App  implements OnInit  {
+export class App implements OnInit {
   protected readonly title = signal('shaman-project');
   constructor(private router: Router) {}
   ngOnInit() {

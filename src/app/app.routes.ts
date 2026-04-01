@@ -5,8 +5,8 @@ import { ShamanComponent } from './components/shaman/shaman.component';
 import { ClothesComponent } from './components/shaman/clothes/clothes.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'shaman', component: ShamanComponent },
   { path: 'shaman/clothes', component: ClothesComponent },
-  { path: 'items', component: AltarComponent }
+  { path: 'items', component: AltarComponent },
 ];
