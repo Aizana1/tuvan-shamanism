@@ -1,6 +1,7 @@
 <div class="mystery-container">
   <div class="top-nav">
     <a routerLink="/" class="back-btn"><span class="arrow">←</span> {{ translationService.getTranslations().shaman.backButton }}</a>
+    <a routerLink="/shaman/clothes" class="next-nav-btn">{{ translationService.getTranslations().shaman.nextButton }} <span class="arrow">→</span></a>
   </div>
 
   <div class="content-wrapper">
@@ -62,7 +63,6 @@
         </div>
       </div>
 
-      <a routerLink="/shaman/clothes" class="next-btn">{{ translationService.getTranslations().shaman.nextButton }}</a>
     </div>
   </div>
 </div>

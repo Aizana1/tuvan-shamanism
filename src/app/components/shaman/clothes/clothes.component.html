@@ -1,6 +1,7 @@
 <div class="clothes-container">
   <div class="top-nav">
     <a routerLink="/shaman" class="back-btn"><span class="arrow">←</span> {{ translationService.getTranslations().clothes.backButton }}</a>
+    <a routerLink="/items" class="next-nav-btn">{{ translationService.getTranslations().clothes.nextAction.button }} <span class="arrow">→</span></a>
   </div>
 
   <header class="hero-section">
@@ -113,9 +114,5 @@
       </div>
     </section>
 
-    <div class="next-action">
-      <p>{{ translationService.getTranslations().clothes.nextAction.text }}</p>
-      <a routerLink="/items" class="next-btn">{{ translationService.getTranslations().clothes.nextAction.button }}</a>
-    </div>
   </div>
 </div>

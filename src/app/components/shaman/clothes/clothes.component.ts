@@ -54,7 +54,6 @@ export class ClothesComponent implements OnInit {
 
     this.loadTranslations();
     
-    // Reload translations when language changes
     this.translationService.currentLanguage$.subscribe(() => {
       this.loadTranslations();
     });

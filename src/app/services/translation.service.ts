@@ -168,7 +168,7 @@ const translations: Record<Language, Translations> = {
             title: 'Payment',
             tuvanTitle: '(Asty)',
             description:
-              'Rich patients gave cattle or a horse with silver harness. Poor patients gave a felt rug, skins, or personal ornaments like rings or buttons.',
+              'Rich patients used to give cattle or a horse with silver harness. Poor patients gave a felt rug, skins, or personal ornaments like rings or buttons.',
           },
           offering: {
             title: 'Offering to Attributes',
